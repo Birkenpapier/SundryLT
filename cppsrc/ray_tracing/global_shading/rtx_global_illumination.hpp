@@ -1,4 +1,16 @@
 #pragma once
+/**
+ * @file rtx_global_illumination.cpp
+ *
+ * @brief various classes for calculating a ray tracing scene with global illumination
+ *
+ * @ingroup SundryLT
+ *
+ * @author Kevin Peivareh
+ * Contact: kevin@peivareh.com
+ *
+ */
+
 #include <iostream>
 #include <cmath>
 #include <cstdio>
@@ -6,6 +18,13 @@
 #include <thread>
 #include <GL/glut.h>
 
+
+/**
+ * Implementation of a color in RGB color space
+ *
+ * to simplify the usage of RGB color in C++
+ *
+ */
 class RGBSpace
 {
    public:
@@ -20,6 +39,12 @@ class RGBSpace
       void clamp();
 };
 
+/**
+ * Implementation of a position in 3D space
+ *
+ * to simplify the usage of positions in 3D space in C++
+ *
+ */
 class Position
 {
    public:
@@ -30,6 +55,12 @@ class Position
       float distance(Position p);
 };
 
+/**
+ * Implementation of a vector
+ *
+ * this class represents a vector which describes a direction in 3D space
+ *
+ */
 class DirectionVector
 {
    public:
@@ -44,6 +75,12 @@ class DirectionVector
       void sub(DirectionVector v);
 };
 
+/**
+ * Implementation of light
+ *
+ * to simplify the usage of light rays in C++
+ *
+ */
 class LightRay
 {
    public:
@@ -56,6 +93,12 @@ class LightRay
       Position get_sample(float t);
 };
 
+/**
+ * Implementation of a sphere in 3D space
+ *
+ * to simplify the usage of RGB color in C++
+ *
+ */
 class Sphere
 {
    public:
@@ -69,7 +112,12 @@ class Sphere
       bool calc_intersection(LightRay ray, Position &p, DirectionVector &normal);
 };
 
-//----------------------------------------------
+/**
+ * Implementation of PhongShading
+ *
+ * class for using the phong shading to shade different elements in 3D space
+ *
+ */
 class PhongShading
 {
  public:
