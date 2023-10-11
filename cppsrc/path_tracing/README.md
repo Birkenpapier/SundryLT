@@ -1,0 +1,1 @@
+g++ -std=c++11 -o pathtracer.exe pathtracer.cpp -fopenmp && pathtracer.exe > output.ppm
